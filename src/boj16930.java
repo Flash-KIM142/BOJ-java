@@ -65,16 +65,7 @@ public class boj16930 {
         endRow = Integer.parseInt(stk.nextToken());
         endCol = Integer.parseInt(stk.nextToken());
 
-
         bfs();
-
-        for(int i=1; i<=N; i++){
-            for(int j=1; j<=M; j++){
-                bfw.write(String.valueOf(visited[i][j]));
-            }
-            bfw.newLine();
-        }
-        bfw.newLine();
         visited[endRow][endCol] = visited[endRow][endCol]==0 ? -1:visited[endRow][endCol];
         bfw.write(String.valueOf(visited[endRow][endCol]));
         bfw.close();
