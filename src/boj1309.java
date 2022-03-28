@@ -22,7 +22,9 @@ public class boj1309 {
         BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(bfr.readLine());
         dp = new int[N+1][3];
-        dp[1][0] = 1; dp[1][1] = 1; dp[1][2] = 1;
+        dp[1][0] = 1;
+        dp[1][1] = 1;
+        dp[1][2] = 1;
         solution();
 
         System.out.println(answer);
