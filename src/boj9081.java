@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class boj9081 {
-
     public static void main(String[] args) throws IOException {
         BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(bfr.readLine());
@@ -44,5 +43,4 @@ public class boj9081 {
 
         return sb.toString();
     }
-
 }

@@ -17,11 +17,33 @@ public class boj14502 {
             for(int j=0; j<M; j++)
                 map[i][j] = sc.nextInt();
 
-        dfs(0);
+//        dfs(0);
+        backtracking(0, 0, 0);
         System.out.println(max);
     }
 
-    static void dfs(int cnt){
+//    static void dfs(int cnt){
+//        if(cnt==3){
+//            int[][] tmp = new int[N][M];
+//            for(int i=0; i<N; i++)
+//                tmp[i] = map[i].clone();
+//
+//            bfs(tmp);
+//            return;
+//        }
+//
+//        for(int i=0; i<N; i++){
+//            for(int j=0; j<M; j++){
+//                if(map[i][j]==0){
+//                    map[i][j] = 1;
+//                    dfs(cnt+1);
+//                    map[i][j] = 0;
+//                }
+//            }
+//        }
+//    }
+
+    static void backtracking(int cnt, int r, int c){
         if(cnt==3){
             int[][] tmp = new int[N][M];
             for(int i=0; i<N; i++)
@@ -31,11 +53,12 @@ public class boj14502 {
             return;
         }
 
-        for(int i=0; i<N; i++){
-            for(int j=0; j<M; j++){
+        for(int i=r; i<N; i++){
+            for(int j=c; j<M; j++){
                 if(map[i][j]==0){
                     map[i][j] = 1;
-                    dfs(cnt+1);
+                    if(c==M-1)  backtracking(cnt+1, i+1, 0);
+                    else    backtracking(cnt+1, i, j+1);
                     map[i][j] = 0;
                 }
             }
