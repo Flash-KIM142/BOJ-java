@@ -31,4 +31,25 @@ public class boj1182 {
         backtracking(cur+1, sum);
         backtracking(cur+1, sum + ary[cur]);
     }
+
+    /*  조합으로 풀이
+    static void backtracking(int k, int n, int cur, int sum, boolean[] v){
+        if(k==n){
+            if(sum==S){
+                cnt++;
+            }
+            return;
+        }
+
+        for(int i=cur; i<N; i++){
+            if(v[i])  continue;
+
+            v[i] = true;
+            sum += ary[i];
+            backtracking(k+1, n, i+1, sum, v);
+            v[i] = false;
+            sum -= ary[i];
+        }
+    }
+    */
 }
